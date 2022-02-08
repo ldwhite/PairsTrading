@@ -8,7 +8,7 @@ Using Python to construct a Pairs Trading Strategy. This model pulls the current
 
 ## Required Packages
 
-<img src="https://raw.githubusercontent.com/ldwhite/TradingStrategies/main/carbon.png" 
+<img src="https://raw.githubusercontent.com/ldwhite/TradingStrategies/main/images/packages.png" 
      width="400" 
      />
 
