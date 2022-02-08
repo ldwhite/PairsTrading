@@ -12,5 +12,7 @@ Using Python to construct a Pairs Trading Strategy. This model pulls the current
      width="400" 
      />
 
+We need to load NumPy and Pandas just about anytime we're dealing with data. The Datetime package is used when setting the start and end dates that we're using to determine the time interval in which our historical stock data will be picked. Pandas-Datareader is the package we will be using to obtain historical pricing data. Statsmodels is the package we will use for conducting our correlation and cointegration tests. Finally, Matplotlib and Seaborn are the packages we will use for data visualization, with Matplotlib being used for generating graphs and Seaborn used for constructing the correlation heatmap.
+
 ## Acknowledgements
 A lot of inspiration came from [KidQuant](https://kidquant.com/project/pairs-trading-strategies-in-python/).
