@@ -4,7 +4,7 @@
   <img src = "https://github.com/ldwhite/PairsTrading/blob/main/images/Stock%20Market.gif" />
 </p>
 
-Using Python to construct a Pairs Trading Strategy. This model pulls the current list of S&P 500 companies as listed on wikipedia and allows the user to easily filter them by Sector and Industry which then tests for correlation and cointegration between pairs of stocks, normalizes their standard deviations and constructs buy and sell signals.
+Today, we use Python to construct a pairs trading strategy. This model pulls the current list of S&P 500 constituents from Wikipedia, allowing the user to easily filter companies by Sector and Industry, which then tests for correlation and cointegration between pairs of stocks, normalizes their standard deviations, and constructs buy and sell signals.
 
 ## Required Packages
 
@@ -12,7 +12,7 @@ Using Python to construct a Pairs Trading Strategy. This model pulls the current
 <img src = "https://raw.githubusercontent.com/ldwhite/TradingStrategies/main/images/packages.png" style = "width:50%" />
 </p>
 
-We need to load NumPy and Pandas just about anytime we're dealing with data. The Datetime package is used when setting the start and end dates that we're using to determine the time interval in which our historical stock data will be picked. Pandas-Datareader is the package we will be using to obtain historical pricing data. Statsmodels is the package we will use for conducting our correlation and cointegration tests. Finally, Matplotlib and Seaborn are the packages we will use for data visualization, with Matplotlib being used for generating graphs and Seaborn used for constructing the correlation heatmap.
+We need to load NumPy and Pandas just about anytime we're dealing with data. The Datetime package is used when setting the start and end dates that determine the time interval in which our historical stock data will be picked. Pandas-Datareader is the package we will be using to obtain historical pricing data. Statsmodels is the package we will use for conducting our correlation and cointegration tests. Finally, Matplotlib and Seaborn are the packages we will use for data visualization, with Matplotlib being used for generating graphs and Seaborn used for constructing the correlation heatmap.
 
 ## Data Gathering
 
@@ -40,7 +40,7 @@ After we use the list of stocks from the S&P 500 to narrow down our choices, we 
 <img src= "https://github.com/ldwhite/PairsTrading/blob/main/images/cointegration.png" style = "width:80%" />
 </p>
 
-The next item on the agenda is confirming that the ratio of the stock pairs we have chosen is fluctuating around a stationary value. If the pair is fluctuating around a stationary value, then we can use that to execute trades: buying or selling the ratio when the pair has deviated a sufficient distance from that stationary value, with the expectation from historical data that it will eventually revert to the mean value. To determine this, we use cointegration. The function as written at the end of this snippet of code isn't strictly speaking necessary but it is a nice way of printing the pvalues and the significance of the P-value of the cointegration.
+The next item on the agenda is confirming that the ratio of the stock pairs we have chosen is fluctuating around a stationary value. If the pair is fluctuating around a stationary value, then we can use that to execute trades: buying or selling the ratio when the pair has deviated a sufficient distance from that stationary value, with the expectation from historical data that it will eventually revert to the mean value. To determine this, we use cointegration. The function as written at the end of this snippet of code isn't strictly speaking necessary but it is a nice way of printing the p-values and the significance of the p-value of the cointegration.
 
 ## Buy and Sell Signals
 
