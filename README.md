@@ -19,5 +19,11 @@ We need to load NumPy and Pandas just about anytime we're dealing with data. The
 
 After we load our required packages, we want to pull a table containing all the companies that are currently listed on the S&P 500 index. I like to pull this from Wikipedia, firstly because the table is already formatted quite well and especially because of the list of Sectors and Industries, which is how we will be dividing the list of stocks we seek to investigate. Note that you might need to make changes to <code>sp500 = pd.DataFrame(tables[0])</code>, as Wikipedia pages sometimes get reformatted, thus it might become necessary to change which table number you are seeking to pull from the Wikipedia page.
 
+## Heatmap
+
+<img src="https://raw.githubusercontent.com/ldwhite/PairsTrading/main/images/heatmap.png" style="width:80%" />
+
+After we use the list of stocks from the S&P 500 to narrow down our choices, we want to find stocks with a high degree of correlation. As you will often end up with a long list of stocks, it can be difficult to identify stock pairs with a high correlation from a traditional correlation matrix. To ameliorate the problem of readability, first we take only the magnitude of correlation, <code>.abs()</code>, then ensure that we have a triangular correlation matrix. We accomplish this by creating a mask using the NumPy package which masks duplicate values in the correlation matrix using <code>mask = np.triu(np.ones_like(matrix, dtype = bool))</code>. The next thing we want to do is ensure the heatmap is set up to our specifications; with a large number of stocks in our correlation matrix, it is beneficial to limit each cell to only two significant figures, which we specify with <code>fmt = '.2f'</code>. Additionally, the color scheme is entirely up to personal preference; the one I chose for this heatmap, <code>cmap = 'RdYlBu_r'</code> is my personal favorite, but you can choose your own. The Seaborn package has great [documentation](https://seaborn.pydata.org/generated/seaborn.heatmap.html) for the various different options available with Seaborn heatmaps.
+
 ## Acknowledgements
 A lot of inspiration came from [KidQuant](https://kidquant.com/project/pairs-trading-strategies-in-python/).
