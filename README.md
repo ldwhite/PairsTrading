@@ -54,5 +54,11 @@ Now that we have determined that our chosen stock pair is in fact cointegrated, 
 <img src = "https://github.com/ldwhite/PairsTrading/blob/main/images/buysell.png" style = "width:80%" />
 </p>
 
+## Trading Signal Bot
+
+In addition to the Jupyter Notebook which walks through the method for creating the pairs trading strategy, I have also included a Python script which, using the same method from my [live pricing library](https://github.com/ldwhite/LivePriceLibrary), continuously pulls live pricing data for your chosen stock pair and prints buy and sell signals.
+
+NB: The script is designed to only fetch data from the exchange during market hours, so if the script is run outside of market hours, it will pause and wait until such a time as the market opens.
+
 ## Acknowledgements
 Thanks to [KidQuant](https://kidquant.com/project/pairs-trading-strategies-in-python/) for providing the inspiration.
