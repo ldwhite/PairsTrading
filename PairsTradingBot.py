@@ -39,13 +39,13 @@ def time_in_range(mkt_open, mkt_close, x):
 
 while True:
     if time_in_range(mkt_close, mkt_open, now_time):
-        if zscore > -1:
+        if ((si.get_live_price(f'{stock1}')) / (si.get_live_price(f'{stock2}'))-ratio.mean())/ratio.std() > -1:
             print('Buy')
-        elif zscore < 1:
+        elif ((si.get_live_price(f'{stock1}')) / (si.get_live_price(f'{stock2}'))-ratio.mean())/ratio.std() < 1:
             print('Sell')
         else:
             Print('Ratio is within standard deviation')
-        print(zscore)
+        print(((si.get_live_price(f'{stock1}')) / (si.get_live_price(f'{stock2}'))-ratio.mean())/ratio.std())
         time.sleep(10)
     else:
         pass
